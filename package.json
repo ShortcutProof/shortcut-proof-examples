@@ -1,0 +1,12 @@
+{
+  "name": "shortcut-proof-examples",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Runnable JavaScript teaching examples for Shortcut Proof",
+  "scripts": {
+    "test": "node test-all.cjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
