@@ -1,6 +1,6 @@
-# Shortcut Proof — runnable JavaScript examples
+# Code Proof — runnable JavaScript examples
 
-Small tricks. Clear proof. Original examples accompanying [Shortcut Proof on YouTube](https://www.youtube.com/@ShortcutProof).
+Real code. Clear proof. Original examples accompanying [Code Proof on YouTube](https://www.youtube.com/channel/UCZ7RnkFL10tRoHMoto4__ug).
 
 ## Run locally
 
@@ -35,3 +35,4 @@ Every example uses assertions. A passing run prints PASS. These are small teachi
 - [Async forEach](https://www.youtube.com/shorts/IO7EWHcozDs)
 
 Additional videos will be linked after publication.
+
