@@ -1,0 +1,41 @@
+import assert from 'node:assert/strict';
+const evidence = [];
+async function run() {
+  const trace = [];
+  const save = async n => { await new Promise(r => setTimeout(r, 20)); trace.push(`saved ${n}`); return n * 10; };
+  await [1,2,3].forEach(async n => { await save(n); });
+  trace.push('done');
+  await new Promise(r => setTimeout(r, 60));
+  assert.equal(trace[0], 'done'); assert.equal(trace.length, 4);
+  evidence.push(trace.join('\n'));
+  const returned = [1,2,3].forEach(() => Promise.resolve());
+  assert.equal(returned, undefined);
+  evidence.push('forEach returns: undefined\nCallback Promises are not collected.');
+  trace.length = 0;
+  const sequential = [];
+  for (const n of [1,2,3]) sequential.push(await save(n));
+  trace.push('done');
+  assert.deepEqual(trace, ['saved 1','saved 2','saved 3','done']);
+  assert.deepEqual(sequential, [10,20,30]);
+  evidence.push(trace.join('\n') + '\nvalues: [10, 20, 30]');
+  const completion = [];
+  const delayedSave = async n => { await new Promise(r => setTimeout(r, (4-n)*40)); completion.push(n); return n*10; };
+  const concurrent = await Promise.all([1,2,3].map(delayedSave));
+  assert.deepEqual(concurrent, [10,20,30]); assert.deepEqual(completion, [3,2,1]);
+  evidence.push('Completion: [3, 2, 1]\nResult: [10, 20, 30]');
+  const neighbors = [];
+  const failingSave = async n => { await new Promise(r => setTimeout(r,n===2?5:30)); if(n===2) throw new Error('blocked item 2'); neighbors.push(n); return n*10; };
+  let error;
+  try { await Promise.all([1,2,3].map(failingSave)); } catch(e) { error=e.message; }
+  assert.equal(error,'blocked item 2');
+  await new Promise(r => setTimeout(r,60)); assert.deepEqual(neighbors,[1,3]);
+  const report = await Promise.allSettled([1,2,3].map(failingSave));
+  assert.deepEqual(report.map(r=>r.status),['fulfilled','rejected','fulfilled']);
+  evidence.push('all: rejected (blocked item 2)\nOther jobs still finished: [1, 3]\nallSettled: fulfilled / rejected / fulfilled');
+  const practice = await Promise.allSettled([1,2,3].map(async n => {if(n!==2) throw new Error('practice'); return n*10;}));
+  assert.deepEqual(practice.map(r=>r.status),['rejected','fulfilled','rejected']);
+  evidence.push('Practice answer:\nrejected / fulfilled / rejected');
+  evidence.push('PASS: completion dependency\nPASS: input order vs completion order\nPASS: failure does not cancel neighbors');
+}
+await run();
+console.log(JSON.stringify({passed:true, evidence},null,2));
