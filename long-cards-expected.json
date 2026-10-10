@@ -1,0 +1,23 @@
+{
+  "event-loop-00.mjs": "start\nend\npromise\ntimer",
+  "event-loop-01.mjs": "register timer → register reaction → end of current code",
+  "event-loop-02.mjs": "start\nend\nouter\ninner\ntimer",
+  "event-loop-03.mjs": "before await\noutside\nafter await",
+  "event-loop-04.mjs": "sync done 10000\ntimer sees 10000",
+  "event-loop-05.mjs": "sync\nmicrotask\npromise",
+  "event-loop-06.mjs": "PASS: controlled trace matches",
+  "closures-00.mjs": "[3,3,3]",
+  "closures-01.mjs": "binding after loop: 3\nreaders: [3,3,3]",
+  "closures-02.mjs": "[0,1,2]",
+  "closures-03.mjs": "[0,1,2]",
+  "closures-04.mjs": "1 2 1",
+  "closures-05.mjs": "called after loop: [3,3,3]",
+  "closures-06.mjs": "PASS: one instance retains state\nPASS: second instance is independent",
+  "code-review-this-00.mjs": "Ada\nTypeError",
+  "code-review-this-01.mjs": "method receiver: true\ndirect receiver: true",
+  "code-review-this-02.mjs": "Ada\nGrace",
+  "code-review-this-03.mjs": "Ada\nfalse",
+  "code-review-this-04.mjs": "Ada",
+  "code-review-this-05.mjs": "Grace",
+  "code-review-this-06.mjs": "PASS: detached call fails\nPASS: bound receiver observes mutation"
+}

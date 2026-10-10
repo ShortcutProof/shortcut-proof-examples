@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+const user = {name: 'Ada', label() { return this.name; }};
+const detached = user.label;
+assert.throws(() => detached(), TypeError);
+const bound = detached.bind(user);
+assert.equal(bound(), 'Ada');
+user.name = 'Grace';
+assert.equal(bound(), 'Grace');
+console.log('PASS: detached call fails');
+console.log('PASS: bound receiver observes mutation');

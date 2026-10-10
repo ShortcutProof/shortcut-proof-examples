@@ -11,7 +11,7 @@ npm test
 node shallow-copy.cjs
 ```
 
-Every example uses assertions. A passing run prints PASS. These are small teaching demonstrations, not production libraries. Cancellation examples use deterministic gates rather than fragile timer races.
+The short examples use assertions. A passing test run prints PASS. These are small teaching demonstrations, not production libraries. Cancellation examples use deterministic gates rather than fragile timer races.
 
 ## Examples
 
@@ -39,7 +39,7 @@ Every example uses assertions. A passing run prints PASS. These are small teachi
 
 ## Long-form pilot demonstrations
 
-The pilot videos are in preparation; these complete code demonstrations are already available:
+Watch the first long pilot: [Why await forEach Doesn't Wait](https://www.youtube.com/watch?v=frTiaTL9ZMQ). The second pilot is in preparation. Complete runnable demonstrations:
 
 - [Async loops and completion](async-loops-long.mjs): `node async-loops-long.mjs`
 - [Shallow copies and deep clones](shallow-deep-copy-long.mjs): `node shallow-deep-copy-long.mjs`
@@ -67,3 +67,12 @@ The videos below are scheduled, not yet confirmed public here. Times use Europe/
 
 These examples isolate one behavior at a time. For real applications, handle rejected asynchronous checks and control concurrency; keep the input stable while matching checks by index. An API contract determines what missing and explicit null mean. Cleanup error handling needs an explicit policy if both the operation and cleanup fail.
 
+
+
+## Long-video scene exercises
+
+Run `node test-long-cards.cjs` to check all21 standalone programs against the exact outputs shown in the videos. Each numbered card can also run directly, for example `node event-loop-00.mjs`. These bounded Node fixtures illustrate the stated behavior; they do not claim universal callback ordering across all browser/Node APIs.
+
+- event-loop: [1](event-loop-00.mjs), [2](event-loop-01.mjs), [3](event-loop-02.mjs), [4](event-loop-03.mjs), [5](event-loop-04.mjs), [6](event-loop-05.mjs), [7](event-loop-06.mjs).
+- closures: [1](closures-00.mjs), [2](closures-01.mjs), [3](closures-02.mjs), [4](closures-03.mjs), [5](closures-04.mjs), [6](closures-05.mjs), [7](closures-06.mjs).
+- code-review-this: [1](code-review-this-00.mjs), [2](code-review-this-01.mjs), [3](code-review-this-02.mjs), [4](code-review-this-03.mjs), [5](code-review-this-04.mjs), [6](code-review-this-05.mjs), [7](code-review-this-06.mjs).
