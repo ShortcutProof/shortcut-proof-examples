@@ -1,0 +1,1 @@
+const assert=require('node:assert/strict'); const bad=(c,p)=>Math.round(c-p); const good=(c,p)=>Math.round(c*(1-p/100)); assert.equal(bad(8000,25),7975); assert.equal(good(8000,25),6000); assert.equal(good(101,50),51); assert.equal(good(1234,0),1234); assert.equal(good(1234,100),0); console.log('7975;6000;51;BOUNDARIES PASS');

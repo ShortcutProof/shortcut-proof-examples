@@ -39,16 +39,16 @@ The short examples use assertions. A passing test run prints PASS. These are sma
 
 ## Long-form pilot demonstrations
 
-Watch the first long pilot: [Why await forEach Doesn't Wait](https://www.youtube.com/watch?v=frTiaTL9ZMQ). The second pilot is in preparation. Complete runnable demonstrations:
+Watch the first long pilot: [Why await forEach Doesn't Wait](https://www.youtube.com/watch?v=frTiaTL9ZMQ). The second pilot is uploaded and scheduled for 13 October 2026 at 20:00 Europe/Sofia. Complete runnable demonstrations:
 
 - [Async loops and completion](async-loops-long.mjs): `node async-loops-long.mjs`
 - [Shallow copies and deep clones](shallow-deep-copy-long.mjs): `node shallow-deep-copy-long.mjs`
 
 Both scripts run independent assertion-backed examples with Node.js 22.19.0.
 
-## Scheduled examples
+## Release calendar
 
-The videos below are scheduled, not yet confirmed public here. Times use Europe/Sofia; a scheduled video may remain private until its release time.
+Times use Europe/Sofia. Regex, Set, sparse-map and Unicode videos were verified public on 12 October; later dates remain scheduled and may be private until release.
 
 - [Stateful regex](https://www.youtube.com/shorts/BP3uo9Av0u4) — 10 October 2026, 13:00; [runnable example](regex-state.cjs).
 - [Set and objects](https://www.youtube.com/shorts/gx1wEFskPyE) — 10 October 2026, 19:00; [runnable example](set-objects.cjs).
@@ -76,3 +76,14 @@ Run `node test-long-cards.cjs` to check all21 standalone programs against the ex
 - event-loop: [1](event-loop-00.mjs), [2](event-loop-01.mjs), [3](event-loop-02.mjs), [4](event-loop-03.mjs), [5](event-loop-04.mjs), [6](event-loop-05.mjs), [7](event-loop-06.mjs).
 - closures: [1](closures-00.mjs), [2](closures-01.mjs), [3](closures-02.mjs), [4](closures-03.mjs), [5](closures-04.mjs), [6](closures-05.mjs), [7](closures-06.mjs).
 - code-review-this: [1](code-review-this-00.mjs), [2](code-review-this-01.mjs), [3](code-review-this-02.mjs), [4](code-review-this-03.mjs), [5](code-review-this-04.mjs), [6](code-review-this-05.mjs), [7](code-review-this-06.mjs).
+
+## Review Lab discount test
+
+[Watch the public Short](https://www.youtube.com/shorts/ZYpd2f4QS4k) · [Runnable proof](review-discount.cjs) · [Free practice task](https://payhip.com/b/Ph0TY). The exercise rounds discounted cents with Math.round; this is a stated exercise contract, not a universal accounting policy.
+
+## New tested practice previews
+
+These have verified runnable code; their videos are not finished or published yet.
+- [036-sort-mutates](036-sort-mutates.cjs)
+- [037-first-duplicate](037-first-duplicate.cjs)
+- [038-nan-validation](038-nan-validation.cjs)

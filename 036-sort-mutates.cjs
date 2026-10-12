@@ -1,0 +1,13 @@
+const assert = require('node:assert/strict');
+const original = [3, 1, 2];
+const sorted = original.sort((a, b) => a - b);
+console.log('MUTATED', original.join(','), sorted === original);
+assert.deepEqual(original, [1, 2, 3]);
+assert.equal(sorted, original);
+const source = [3, 1, 2];
+const copy = source.toSorted((a, b) => a - b);
+console.log('FIXED', source.join(','), copy.join(','), copy === source);
+assert.deepEqual(source, [3, 1, 2]);
+assert.deepEqual(copy, [1, 2, 3]);
+assert.notEqual(copy, source);
+console.log('PASS');
