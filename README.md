@@ -87,3 +87,9 @@ These have verified runnable code; their videos are not finished or published ye
 - [036-sort-mutates](036-sort-mutates.cjs)
 - [037-first-duplicate](037-first-duplicate.cjs)
 - [038-nan-validation](038-nan-validation.cjs)
+
+## Interview lesson: two meanings of first duplicate
+
+Run `node first-repeat-long.cjs` for eight original executed scenes: contracts, counterexamples, Set trace, empty-string IDs, nonmutation and operation counts. [Complete source](first-repeat-long.cjs).
+
+The7:08 lesson is ready locally and intended for25October2026 at20:00 Europe/Sofia. It is not uploaded yet because of the channel upload limit. String IDs are a precondition; no universal Set timing guarantee.
